@@ -3,39 +3,62 @@ NAME
 
 SYNOPSIS
       package Your::Package;
-
+      use vars qw($VERSION);
+      $VERSION = '0.01'; # or anything that evaluates to a version
       &Acme::SoftwareUpdate if eval{require Acme::SoftwareUpdate};
 
 DESCRIPTION
     When incorported into your distribution's main module,
     Acme::SoftwareUpdate will inform your users if there is a later version
     of your distribution on the CPAN. If the user has ExtUtils::AutoInstall
-    installed, Acme::SoftwareUpdate will not just inform them of the newer
-    version, it will also give them the option of auto-installing the new
-    version of your distribution.
+    installed, Acme::SoftwareUpdate will also give your users the option of
+    auto-upgrading the new version of your distribution.
 
     This distribution is in the Acme:: namespace for a reason. Namely, the
     author is not particularly confident that this very concept is either
     sane, or particularly useful.
 
-CAVEATS
-    Acme::SoftwareUpdate won't work with distributions whose main module
-    package name differs from the distribution's name, e.g.,
-    LWP/libwww-perl.
+EXAMPLE
+    The following is an example of what might be displayed when the caller
+    module is found to be out-of-date. If the user does not have
+    ExtUtils::AutoInstall installed, they will get the message below, minus
+    the prompt to upgrade.
 
-    Acme::SoftwareUpdate depends on a net connection, and the availability
-    of search.cpan.org. This means that it may take up to six hours after a
-    new distribution is uploaded to PAUSE for Acme::SoftwareUpdate to know
-    about it.
+      There's a new version of Test::Reporter available!
+      [http://search.cpan.org/author/FOX/Test-Reporter-1.20/]
+
+        Current version: 1.16, installed on Tue Feb 26 23:01:20 2003
+        New version: 1.20, released on 5th June 2003
+
+      Would you like to upgrade? (y/n):
+
+CAVEATS
+    Acme::SoftwareUpdate depends on search.cpan.org's experimental xml
+    interface. http://search.cpan.org/faq.html#08xml clearly states that the
+    xml interface is not supported and may change at any time. That means
+    that this distribution could break without notice.
+
+    You should have 'version' and/or 'Sort::Versions' installed if you
+    expect A::SU to check modules with non-standard version numbers.
 
 NOTES
-    If the environmental variable 'NOSOFTWAREUPDATE' is set,
+    Acme::SoftwareUpdate depends on a net connection, and the availability
+    of search.cpan.org. Due to the nature of how search.cpan.org mirrors
+    ftp.funet.fi, it may take up to four hours after a new distribution is
+    uploaded to PAUSE for Acme::SoftwareUpdate to know about it.
+
+    If the environmental variable 'SOFTWARE_UPDATE_DISABLE' is set, or there
+    is no controlling TTY, or there is no network connection,
     Acme::SoftwareUpdate will simply return, without doing anything.
 
-    We use the unconventional '&Acme::SoftwareUpdate if eval{require
-    Acme::SoftwareUpdate};' syntax so that an update check will be skipped
-    if a user of your distribution doesn't happen to have
-    Acme::SoftwareUpdate installed.
+    If the environmental variable 'SOFTWARE_UPDATE_DEPS' is set, A::SU will
+    also check to see if the calling packages dependencies are out-of-date,
+    if they happen to also make use of A::SU.
+
+    As you probably guessed, we use the unconventional
+    '&Acme::SoftwareUpdate if eval{require Acme::SoftwareUpdate};' syntax so
+    that an update check will be skipped if a user of your distribution
+    doesn't happen to have Acme::SoftwareUpdate installed.
 
 COPYRIGHT
       Copyright (c) 2003 Adam J. Foxson. All rights reserved.
@@ -50,6 +73,8 @@ SEE ALSO
     * the ExtUtils::AutoInstall manpage
     * the Module::Signature manpage
     * the Module::Install manpage
+    * the version manpage
+    * the Sort::Versions manpage
 AUTHOR
     Adam J. Foxson <afoxson@pobox.com>.
 

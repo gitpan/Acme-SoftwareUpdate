@@ -1,4 +1,19 @@
 Revision history for Perl extension Acme::SoftwareUpdate.
 
+0.33  Sun Jul 20 14:43:45 2003
+    - check for a network connection before attempting anything
+    - check for controlling tty before attempting anything
+    - we now support every distribution on CPAN that is sanely packaged and has
+      a version
+    - we now use search.cpan.org's experimental xml interface
+    - increased execution speed by five times
+    - decreased bandwidth utilization by ten times
+    - enhanced the message that appears when a module is out-of-date
+    - changed envvar 'NOSOFTWAREUPDATE' to 'SOFTWARE_UPDATE_DISABLE'
+    - added envvar 'SOFTWARE_UPDATE_DEPS'
+    - better acquisition of VERSION's
+    - better comparison of VERSION's
+    - improved error handling
+
 0.22  Sun Jul 13 12:02:08 2003
     - initial release

@@ -13,5 +13,5 @@ To install this distribution type the following:
 
 DEPENDENCIES
 
-ExtUtils::AutoInstall (optional; for auto-installation of out-of-date distros)
+ExtUtils::AutoInstall (optional; for auto-upgrading of out-of-date distros)
 Module::Signature (optional; for distribution authenticity verification)

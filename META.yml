@@ -1,12 +1,14 @@
 name: Acme-SoftwareUpdate
-version: 0.22
+version: 0.33
 abstract: check for newer version of caller module
 author: Adam J. Foxson <afoxson@pobox.com>
 license: gpl
 distribution_type: module
 recommends:
   ExtUtils::AutoInstall: 0
+  version: 0
+  Sort::Versions: 0
 private:
   directory:
     - inc
-generated_by: Module::Install version 0.21
+generated_by: Module::Install version 0.22
