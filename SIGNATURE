@@ -1,0 +1,45 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.24.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It would check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 12549569098cbb0efa8a4aa91f5f38068791fe42 COPYING
+SHA1 4cd7c6eeeebd8a2a07c17f9c6c026e9ce8bb7e3f Changes
+SHA1 cea60a6bffaca84abef796d3271f95b8315de89f INSTALL
+SHA1 16dbc37c87aa1d545603fcd8d9ca64bc83db1fc9 MANIFEST
+SHA1 c2acf6716aa922ce2e5dff5c739c2b208a270f89 MANIFEST.SKIP
+SHA1 e18cf36faebe875a93aab84c79390f9fdf0e1eaf META.yml
+SHA1 3627a3db4866ce334539b1dc32c52219f2a3c114 Makefile.PL
+SHA1 be784e66cc9ecfc423af2fc7bcdd203cd88d1106 README
+SHA1 24b1fbee33531f78eb4b3f48dddc1c1134a8011c inc/ExtUtils/AutoInstall.pm
+SHA1 5c8819f90b7726a5821647dbb9f8a88e80c130ea inc/Module/Install.pm
+SHA1 75f7e3aeab06fa70f1032142ad717c5351fbb87d inc/Module/Install/AutoInstall.pm
+SHA1 f9b24536c799a3e8e8f011bfc7d7340618e0a679 inc/Module/Install/Base.pm
+SHA1 25a98b3f87ff59247413bebb284ed2c1316c44c7 inc/Module/Install/Can.pm
+SHA1 b5e97ce114738b322214d46b704c512a4fc585a4 inc/Module/Install/Fetch.pm
+SHA1 b6cbcc40bb7d89a9694f13ab29b43e37ed3c9d49 inc/Module/Install/Include.pm
+SHA1 baf8c73e2914536fe0b110689772561eeb57ed3f inc/Module/Install/Makefile.pm
+SHA1 660f0357eae873b1441f7b06209eaa56d04a554e inc/Module/Install/Metadata.pm
+SHA1 5d40574886f14c1b47dcabacba96864d63aa7afc inc/Module/Install/Win32.pm
+SHA1 4751d793b8a948982720f76fd56a3aa77d28dc25 lib/Acme/SoftwareUpdate.pm
+SHA1 835b9b482d3d287dcc3840f52ef547ceabc3d37e lib/Acme/SoftwareUpdate.pod
+SHA1 677e680b59871a6d1cdaa64a1df2fb6e451988f1 t/0-signature.t
+SHA1 6910bf2870ffbe58ec6bdfaf18775e64e33e8111 t/softwareupdate.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.1 (Darwin)
+
+iD8DBQE/EYK95LPoF9AsmmsRAmc/AKCKjTzYpFWwhU/DU9IA0c0uXjGx1ACgsXNL
+lxGXZpjQebLhNEi0TTx8iVg=
+=v8eU
+-----END PGP SIGNATURE-----

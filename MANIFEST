@@ -1,0 +1,23 @@
+COPYING
+Changes
+INSTALL
+MANIFEST			This list of files
+MANIFEST.SKIP
+META.yml
+Makefile.PL
+README
+SIGNATURE
+inc/ExtUtils/AutoInstall.pm
+inc/Module/Install.pm
+inc/Module/Install/AutoInstall.pm
+inc/Module/Install/Base.pm
+inc/Module/Install/Can.pm
+inc/Module/Install/Fetch.pm
+inc/Module/Install/Include.pm
+inc/Module/Install/Makefile.pm
+inc/Module/Install/Metadata.pm
+inc/Module/Install/Win32.pm
+lib/Acme/SoftwareUpdate.pm
+lib/Acme/SoftwareUpdate.pod
+t/0-signature.t
+t/softwareupdate.t

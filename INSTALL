@@ -1,0 +1,17 @@
+Acme::SoftwareUpdate
+====================
+
+INSTALLATION
+
+To install this distribution type the following:
+
+   cpansign -v (optional; requires Module::Signature to be installed)
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+ExtUtils::AutoInstall (optional; for auto-installation of out-of-date distros)
+Module::Signature (optional; for distribution authenticity verification)

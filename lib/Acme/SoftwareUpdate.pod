@@ -1,0 +1,74 @@
+=pod
+
+=head1 NAME
+
+Acme::SoftwareUpdate - check for newer version of caller module
+
+=head1 SYNOPSIS
+
+  package Your::Package;
+
+  &Acme::SoftwareUpdate if eval{require Acme::SoftwareUpdate};
+
+=head1 DESCRIPTION
+
+When incorported into your distribution's main module, Acme::SoftwareUpdate
+will inform your users if there is a later version of your distribution on
+the CPAN. If the user has ExtUtils::AutoInstall installed, Acme::SoftwareUpdate
+will not just inform them of the newer version, it will also give them the
+option of auto-installing the new version of your distribution.
+
+This distribution is in the Acme:: namespace for a reason. Namely, the author
+is not particularly confident that this very concept is either sane, or
+particularly useful.
+
+=head1 CAVEATS
+
+Acme::SoftwareUpdate won't work with distributions whose main module
+package name differs from the distribution's name, e.g., LWP/libwww-perl.
+
+Acme::SoftwareUpdate depends on a net connection, and the availability of
+search.cpan.org. This means that it may take up to six hours after a new
+distribution is uploaded to PAUSE for Acme::SoftwareUpdate to know about it.
+
+=head1 NOTES
+
+If the environmental variable 'NOSOFTWAREUPDATE' is set, Acme::SoftwareUpdate
+will simply return, without doing anything.
+
+We use the unconventional
+'&Acme::SoftwareUpdate if eval{require Acme::SoftwareUpdate};'
+syntax so that an update check will be skipped if a user of your distribution
+doesn't happen to have Acme::SoftwareUpdate installed.
+
+=head1 COPYRIGHT
+
+  Copyright (c) 2003 Adam J. Foxson. All rights reserved.
+
+=head1 LICENSE
+
+  See COPYING.
+
+=head1 SEE ALSO
+
+=over 4
+
+=item * L<perl>
+
+=item * L<CPAN>
+
+=item * L<CPANPLUS>
+
+=item * L<ExtUtils::AutoInstall>
+
+=item * L<Module::Signature>
+
+=item * L<Module::Install>
+
+=back
+
+=head1 AUTHOR
+
+Adam J. Foxson E<lt>F<afoxson@pobox.com>E<gt>.
+
+=cut
